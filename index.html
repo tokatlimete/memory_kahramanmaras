@@ -14,14 +14,14 @@
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(3, 120px);
-            gap: 15px;
+            grid-template-columns: repeat(3, 250px); /* Platz für große Karten */
+            gap: 20px;
             justify-content: center;
             margin-top: 30px;
         }
         .card {
-            width: 100px;
-            height: 100px;
+            width: 250px;
+            height: 250px;
             position: relative;
             transform-style: preserve-3d;
             transition: transform 0.5s;
@@ -69,10 +69,9 @@
         let secondCard = null;
         let lockBoard = false;
 
-        // Mischen
         const shuffledCards = [...cardsArray].sort(() => 0.5 - Math.random());
 
-        shuffledCards.forEach((cardData, index) => {
+        shuffledCards.forEach((cardData) => {
             const card = document.createElement('div');
             card.classList.add('card');
             card.dataset.name = cardData.name;
